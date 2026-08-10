@@ -231,7 +231,7 @@ function LongTermLoan() {
                                 {cell}
                               </td>
                             ))}
-                            {EXTRA[r].map((cell, c) => (
+                            {(EXTRA[r] ?? []).map((cell, c) => (
                               <td key={`e${c}`} className="border border-sap-grid-line px-1">
                                 {cell}
                               </td>
