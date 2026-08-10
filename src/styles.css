@@ -233,3 +233,11 @@
   background: linear-gradient(to bottom, var(--sap-menu-from), var(--sap-menu-to));
   color: oklch(1 0 0);
 }
+
+@layer base {
+  html,
+  body {
+    min-height: 100%;
+    background-color: var(--sap-desktop);
+  }
+}
