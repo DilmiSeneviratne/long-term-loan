@@ -142,3 +142,79 @@
     color: var(--color-foreground);
   }
 }
+
+/* ── SAP Business One classic UI theme ───────────────────────────── */
+:root {
+  --sap-app-bg: oklch(0.93 0.004 250);
+  --sap-menubar: oklch(0.955 0.003 250);
+  --sap-titlebar-from: oklch(0.99 0.03 95);
+  --sap-titlebar-to: oklch(0.86 0.11 85);
+  --sap-window-bg: oklch(0.965 0.003 250);
+  --sap-window-border: oklch(0.62 0.01 250);
+  --sap-form-bg: oklch(0.985 0.002 250);
+  --sap-field-bg: oklch(1 0 0);
+  --sap-field-border: oklch(0.72 0.01 250);
+  --sap-field-text: oklch(0.35 0.09 250);
+  --sap-label: oklch(0.2 0 0);
+  --sap-grid-head: oklch(0.9 0.004 250);
+  --sap-grid-line: oklch(0.82 0.005 250);
+  --sap-row-alt: oklch(0.975 0.002 250);
+  --sap-btn-from: oklch(0.99 0.04 95);
+  --sap-btn-to: oklch(0.83 0.13 82);
+  --sap-btn-border: oklch(0.6 0.1 75);
+  --sap-accent-bar: oklch(0.82 0.16 85);
+  --sap-titlebar-dark: oklch(0.45 0.005 250);
+  --sap-highlight: oklch(0.86 0.14 88);
+}
+
+@theme inline {
+  --color-sap-app-bg: var(--sap-app-bg);
+  --color-sap-menubar: var(--sap-menubar);
+  --color-sap-window-bg: var(--sap-window-bg);
+  --color-sap-window-border: var(--sap-window-border);
+  --color-sap-form-bg: var(--sap-form-bg);
+  --color-sap-field-bg: var(--sap-field-bg);
+  --color-sap-field-border: var(--sap-field-border);
+  --color-sap-field-text: var(--sap-field-text);
+  --color-sap-label: var(--sap-label);
+  --color-sap-grid-head: var(--sap-grid-head);
+  --color-sap-grid-line: var(--sap-grid-line);
+  --color-sap-row-alt: var(--sap-row-alt);
+  --color-sap-btn-border: var(--sap-btn-border);
+  --color-sap-titlebar-dark: var(--sap-titlebar-dark);
+  --color-sap-highlight: var(--sap-highlight);
+}
+
+@utility sap-font {
+  font-family: Tahoma, Verdana, Geneva, sans-serif;
+  font-size: 11px;
+}
+
+@utility sap-titlebar {
+  background: linear-gradient(to bottom, var(--sap-titlebar-from), var(--sap-titlebar-to));
+}
+
+@utility sap-button {
+  font-family: Tahoma, Verdana, Geneva, sans-serif;
+  font-size: 11px;
+  background: linear-gradient(to bottom, var(--sap-btn-from), var(--sap-btn-to));
+  border: 1px solid var(--sap-btn-border);
+  padding: 1px 10px;
+  line-height: 16px;
+  color: var(--sap-label);
+}
+@utility sap-button {
+  &:hover { filter: brightness(1.06); }
+}
+
+@utility sap-input {
+  font-family: Tahoma, Verdana, Geneva, sans-serif;
+  font-size: 11px;
+  background-color: var(--sap-field-bg);
+  border: 1px solid var(--sap-field-border);
+  color: var(--sap-field-text);
+  height: 17px;
+  padding: 0 3px;
+  width: 100%;
+  outline: none;
+}
