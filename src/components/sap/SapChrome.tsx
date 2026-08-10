@@ -156,11 +156,9 @@ export function SapChrome({
 export function SapWindow({
   caption,
   children,
-  dark,
 }: {
   caption: string;
   children: ReactNode;
-  dark?: boolean;
 }) {
   return (
     <div className="m-[2px] border border-sap-window-border bg-sap-window-bg">

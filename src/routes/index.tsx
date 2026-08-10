@@ -69,7 +69,7 @@ function LongTermLoan() {
 
   return (
     <SapChrome title="TEST | manager">
-      <SapWindow caption="Long Term Loan" dark>
+      <SapWindow caption="Long Term Loan">
         <div className="min-h-[470px] p-2">
           {/* Document header */}
           <div className="mb-1 space-y-[1px]">

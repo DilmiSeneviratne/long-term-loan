@@ -218,3 +218,17 @@
   width: 100%;
   outline: none;
 }
+
+:root {
+  --sap-desktop: oklch(0.18 0 0);
+  --sap-menu-from: oklch(0.55 0.2 27);
+  --sap-menu-to: oklch(0.4 0.17 27);
+  --sap-accent: oklch(0.75 0.17 60);
+}
+@theme inline {
+  --color-sap-desktop: var(--sap-desktop);
+  --color-sap-accent: var(--sap-accent);
+}
+@utility sap-menubar {
+  background: linear-gradient(to bottom, var(--sap-menu-from), var(--sap-menu-to));
+}
