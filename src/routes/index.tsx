@@ -85,7 +85,7 @@ function LongTermLoan() {
                 <Sel v="Draft" />
               </div>
             </div>
-            <div className="flex h-[10px] items-start gap-1 overflow-hidden">
+            <div className="flex items-center gap-1">
               <div className="w-[80px]">Approval</div>
               <div className="w-[128px]">
                 <Txt v="Pending" />
