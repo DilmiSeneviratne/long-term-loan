@@ -43,7 +43,7 @@ export function SapChrome({
     <div className="sap-font min-h-screen w-full bg-sap-desktop py-0 text-sap-label">
       <div className="mx-auto flex w-[1117px] max-w-full flex-col border border-sap-window-border bg-sap-app-bg shadow-lg">
       {/* Menu bar */}
-      <div className="sap-menubar relative flex items-center px-1 text-background">
+      <div className="sap-menubar relative flex items-center px-1">
         <div className="flex">
           {MENUS.map((m) => (
             <button
@@ -61,7 +61,7 @@ export function SapChrome({
           ))}
         </div>
         <div className="pointer-events-none absolute inset-x-0 flex justify-center">
-          <span className="text-[12px] font-bold text-background underline">{title}</span>
+          <span className="text-[12px] font-bold underline">{title}</span>
         </div>
         <div className="ml-auto flex items-center gap-1 pr-1 text-[10px]">
           <span className="tracking-tighter">▤</span>

@@ -231,4 +231,5 @@
 }
 @utility sap-menubar {
   background: linear-gradient(to bottom, var(--sap-menu-from), var(--sap-menu-to));
+  color: oklch(1 0 0);
 }
