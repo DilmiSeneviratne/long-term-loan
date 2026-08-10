@@ -251,7 +251,7 @@ function LongTermLoan() {
           </div>
 
           <div className="mt-4 flex gap-2 pl-4">
-            <button className="sap-button w-[56px]">OK</button>
+            <button className="sap-button w-[56px]">Add</button>
             <button className="sap-button w-[56px]">Cancel</button>
           </div>
         </div>
