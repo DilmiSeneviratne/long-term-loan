@@ -40,9 +40,10 @@ export function SapChrome({
   const [hovered, setHovered] = useState<string | null>(null);
 
   return (
-    <div className="sap-font flex min-h-screen flex-col bg-sap-app-bg text-sap-label">
+    <div className="sap-font min-h-screen w-full bg-sap-desktop py-0 text-sap-label">
+      <div className="mx-auto flex w-[1117px] max-w-full flex-col border border-sap-window-border bg-sap-app-bg shadow-lg">
       {/* Menu bar */}
-      <div className="relative flex items-center border-b border-sap-grid-line bg-sap-menubar px-1">
+      <div className="sap-menubar relative flex items-center px-1">
         <div className="flex">
           {MENUS.map((m) => (
             <button
@@ -50,8 +51,8 @@ export function SapChrome({
               onClick={() => setModulesOpen(m === "Modules" ? !modulesOpen : false)}
               className={`px-2 py-[3px] ${
                 m === "Modules" && modulesOpen
-                  ? "bg-sap-highlight"
-                  : "hover:bg-sap-grid-head"
+                  ? "bg-sap-highlight text-sap-label"
+                  : "hover:bg-white/20"
               }`}
             >
               <span className="underline decoration-1 underline-offset-1">{m.charAt(0)}</span>
@@ -60,9 +61,9 @@ export function SapChrome({
           ))}
         </div>
         <div className="pointer-events-none absolute inset-x-0 flex justify-center">
-          <span className="font-bold text-[12px] text-sap-field-text underline">{title}</span>
+          <span className="text-[12px] font-bold underline">{title}</span>
         </div>
-        <div className="ml-auto flex items-center gap-1 pr-1 text-[10px] text-muted-foreground">
+        <div className="ml-auto flex items-center gap-1 pr-1 text-[10px]">
           <span className="tracking-tighter">▤</span>
           <span className="inline-block h-3 w-3 border border-sap-field-border bg-sap-grid-head" />
           <span className="inline-block h-3 w-3 border border-sap-field-border bg-sap-grid-head" />
@@ -71,7 +72,7 @@ export function SapChrome({
 
         {modulesOpen && (
           <div
-            className="absolute left-[152px] top-full z-50 w-[180px] border border-sap-window-border bg-sap-menubar py-[2px] shadow-md"
+            className="absolute left-[152px] top-full z-50 w-[180px] border border-sap-window-border bg-sap-app-bg py-[2px] text-sap-label shadow-md"
             onMouseLeave={() => setHovered(null)}
           >
             {MODULES.map((mod) => (
@@ -94,7 +95,7 @@ export function SapChrome({
                   <span className="text-[8px]">▶</span>
                 </div>
                 {hovered === mod.label && mod.sub && mod.sub.length > 0 && (
-                  <div className="absolute left-full top-0 z-50 w-[150px] border border-sap-window-border bg-sap-menubar py-[2px] shadow-md">
+                  <div className="absolute left-full top-0 z-50 w-[150px] border border-sap-window-border bg-sap-app-bg py-[2px] text-sap-label shadow-md">
                     {mod.sub.map((s) => (
                       <Link
                         key={s.label}
@@ -119,10 +120,10 @@ export function SapChrome({
       </div>
 
       {/* Window */}
-      <div className="flex-1 p-0">{children}</div>
+      <div className="p-0">{children}</div>
 
       {/* Status bar */}
-      <div className="mt-auto border-t border-sap-grid-line bg-sap-app-bg px-1 pb-1 pt-1">
+      <div className="border-t border-sap-grid-line bg-sap-app-bg px-1 pb-1 pt-1">
         <div className="flex items-end gap-1">
           <div className="flex-1 space-y-[2px]">
             <div className="flex gap-1">
@@ -147,6 +148,7 @@ export function SapChrome({
           <img src={sapAsset.url} alt="SAP Business One" className="h-[30px] w-[105px] object-contain" />
         </div>
       </div>
+      </div>
     </div>
   );
 }
@@ -154,20 +156,15 @@ export function SapChrome({
 export function SapWindow({
   caption,
   children,
-  dark,
 }: {
   caption: string;
   children: ReactNode;
-  dark?: boolean;
 }) {
   return (
-    <div className="border border-sap-window-border bg-sap-window-bg">
-      <div
-        className={`flex items-center justify-between px-1 py-[2px] text-[11px] ${
-          dark ? "bg-sap-titlebar-dark text-background" : "sap-titlebar"
-        }`}
-      >
-        <span className={dark ? "" : "text-sap-label"}>{caption}</span>
+    <div className="m-[2px] border border-sap-window-border bg-sap-window-bg">
+      <div className="h-[3px] bg-sap-accent" />
+      <div className="flex items-center justify-between border-b border-sap-grid-line bg-sap-grid-head px-1 py-[2px] text-[11px]">
+        <span className="text-sap-label">{caption}</span>
         <span className="flex gap-[2px]">
           {["_", "▣", "✕"].map((s, i) => (
             <span
