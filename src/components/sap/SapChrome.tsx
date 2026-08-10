@@ -72,7 +72,7 @@ export function SapChrome({
 
         {modulesOpen && (
           <div
-            className="absolute left-[152px] top-full z-50 w-[180px] border border-sap-window-border bg-sap-menubar py-[2px] shadow-md"
+            className="absolute left-[152px] top-full z-50 w-[180px] border border-sap-window-border bg-sap-app-bg py-[2px] text-sap-label shadow-md"
             onMouseLeave={() => setHovered(null)}
           >
             {MODULES.map((mod) => (
@@ -95,7 +95,7 @@ export function SapChrome({
                   <span className="text-[8px]">▶</span>
                 </div>
                 {hovered === mod.label && mod.sub && mod.sub.length > 0 && (
-                  <div className="absolute left-full top-0 z-50 w-[150px] border border-sap-window-border bg-sap-menubar py-[2px] shadow-md">
+                  <div className="absolute left-full top-0 z-50 w-[150px] border border-sap-window-border bg-sap-app-bg py-[2px] text-sap-label shadow-md">
                     {mod.sub.map((s) => (
                       <Link
                         key={s.label}
